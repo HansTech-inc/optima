@@ -9,57 +9,63 @@ export interface TextContent {
 }
 
 export const toolUseNames = [
-	"execute_command",
-	"read_file",
-	"write_to_file",
-	"apply_diff",
-	"insert_content",
-	"search_and_replace",
-	"search_files",
-	"list_files",
-	"list_code_definition_names",
-	"browser_action",
-	"use_mcp_tool",
-	"access_mcp_resource",
-	"ask_followup_question",
-	"attempt_completion",
-	"switch_mode",
-	"new_task",
-	"fetch_instructions",
+"execute_command",
+"read_file",
+"write_to_file",
+"apply_diff",
+"insert_content",
+"search_and_replace",
+"search_files",
+"list_files",
+"list_code_definition_names",
+"browser_action",
+"use_mcp_tool",
+"access_mcp_resource",
+"ask_followup_question",
+"attempt_completion",
+"switch_mode",
+"new_task",
+"fetch_instructions",
+"web_search",
 ] as const
 
 // Converts array of tool call names into a union type ("execute_command" | "read_file" | ...)
 export type ToolUseName = (typeof toolUseNames)[number]
 
 export const toolParamNames = [
-	"command",
-	"path",
-	"content",
-	"line_count",
-	"regex",
-	"file_pattern",
-	"recursive",
-	"action",
-	"url",
-	"coordinate",
-	"text",
-	"server_name",
-	"tool_name",
-	"arguments",
-	"uri",
-	"question",
-	"result",
-	"diff",
-	"start_line",
-	"end_line",
-	"mode_slug",
-	"reason",
-	"operations",
-	"mode",
-	"message",
-	"cwd",
-	"follow_up",
-	"task",
+"command",
+"path",
+"content",
+"line_count",
+"regex",
+"file_pattern",
+"recursive",
+"action",
+"url",
+"coordinate",
+"text",
+"server_name",
+"tool_name",
+"arguments",
+"uri",
+"question",
+"result",
+"diff",
+"start_line",
+"end_line",
+"mode_slug",
+"reason",
+"operations",
+"mode",
+"message",
+"cwd",
+"follow_up",
+"task",
+"query",
+"domain",
+"max_results",
+"sliding_window_size",
+"chunk_dir",
 ] as const
 
 export type ToolParamName = (typeof toolParamNames)[number]
@@ -144,6 +150,11 @@ export interface SwitchModeToolUse extends ToolUse {
 }
 
 export interface NewTaskToolUse extends ToolUse {
-	name: "new_task"
-	params: Partial<Pick<Record<ToolParamName, string>, "mode" | "message">>
+name: "new_task"
+params: Partial<Pick<Record<ToolParamName, string>, "mode" | "message">>
+}
+
+export interface WebSearchToolUse extends ToolUse {
+name: "web_search"
+params: Partial<Pick<Record<ToolParamName, string>, "query" | "domain" | "max_results" | "sliding_window_size" | "chunk_dir">>
 }

@@ -210,18 +210,19 @@ export type { ClineMessage, ClineAsk, ClineSay }
 
 export interface ClineSayTool {
 	tool:
-		| "editedExistingFile"
-		| "appliedDiff"
-		| "newFileCreated"
-		| "readFile"
-		| "fetchInstructions"
-		| "listFilesTopLevel"
-		| "listFilesRecursive"
-		| "listCodeDefinitionNames"
-		| "searchFiles"
-		| "switchMode"
-		| "newTask"
-		| "finishTask"
+	| "editedExistingFile"
+	| "appliedDiff"
+	| "newFileCreated"
+	| "readFile"
+	| "fetchInstructions"
+	| "listFilesTopLevel"
+	| "listFilesRecursive"
+	| "listCodeDefinitionNames"
+	| "searchFiles"
+	| "switchMode"
+	| "newTask"
+	| "finishTask"
+	| "webSearch"
 	path?: string
 	diff?: string
 	content?: string
