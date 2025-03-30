@@ -1,5 +1,5 @@
 {
-	"greeting": "Hi, I'm Roo!",
+	"greeting": "Hi, I'm Optima!",
 	"introduction": "I can do all kinds of tasks thanks to the latest breakthroughs in agentic coding capabilities and access to tools that let me create & edit files, explore complex projects, use the browser, and execute terminal commands (with your permission, of course). I can even use MCP to create new tools and extend my own capabilities.",
 	"notice": "To get started, this extension needs an API provider.",
 	"start": "Let's go!",
@@ -16,7 +16,7 @@
 	"startRouter": "Express Setup Through a Router",
 	"startCustom": "Bring Your Own API Key",
 	"telemetry": {
-		"title": "Help Improve Roo Code",
+		"title": "Help Improve Optima",
 		"anonymousTelemetry": "Send anonymous error and usage data to help us fix bugs and improve the extension. No code, prompts, or personal information is ever sent.",
 		"changeSettings": "You can always change this at the bottom of the <settingsLink>settings</settingsLink>",
 		"settings": "settings",

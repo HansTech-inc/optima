@@ -1,4 +1,4 @@
-import * as vscode from "vscode"
+import * as vscode from "vscode";
 
 import { GroupOptions, GroupEntry, ModeConfig, PromptComponent, CustomModePrompts } from "../schemas"
 import { TOOL_GROUPS, ToolGroup, ALWAYS_AVAILABLE_TOOLS } from "./tool-groups"
@@ -157,10 +157,10 @@ export function isToolAllowedForMode(
 	toolParams?: Record<string, any>, // All tool parameters
 	experiments?: Record<string, boolean>,
 ): boolean {
+	 if (tool === "web_search") {
+	   return true;
+	 }
 	// Always allow these tools
-	if (ALWAYS_AVAILABLE_TOOLS.includes(tool as any)) {
-		return true
-	}
 
 	if (experiments && tool in experiments) {
 		if (!experiments[tool]) {
